@@ -1,29 +1,30 @@
-const form = document.getElementById('survey-form');
+const surveyForm = document.getElementById('surveyForm');
 const resultDiv = document.getElementById('result');
-const suggestionPara = document.getElementById('language-suggestion');
+const languageSuggestion = document.getElementById('languageSuggestion');
 
-form.addEventListener('submit', function (event) {
-  event.preventDefault();
+surveyForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const selectedOption = document.querySelector('input[name="applicationType"]:checked');
+    if (selectedOption) {
+        const applicationType = selectedOption.value;
+        let suggestedLanguage = '';
 
-  const q1Value = form.q1.value;
-  const q2Value = form.q2.value.toLowerCase();
+        switch (applicationType) {
+            case 'web':
+                suggestedLanguage = 'JavaScript';
+                break;
+            case 'mobile':
+                suggestedLanguage = 'Swift';
+                break;
+            case 'system':
+                suggestedLanguage = 'C++';
+                break;
+            // Add more cases here for different questions
+        }
 
-  let languageSuggestion = '';
-
-  if (q1Value === 'web') {
-    if (q2Value.includes('dog')) {
-      languageSuggestion = 'JavaScript';
-    } else {
-      languageSuggestion = 'Python';
+        languageSuggestion.textContent = suggestedLanguage;
+        resultDiv.classList.remove('hidden');
     }
-  } else if (q1Value === 'app') {
-    languageSuggestion = 'Swift';
-  } else if (q1Value === 'sys') {
-    languageSuggestion = 'C#';
-  }
-
-  suggestionPara.textContent = languageSuggestion;
-  resultDiv.classList.remove('hidden');
-  form.reset();
 });
 
