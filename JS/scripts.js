@@ -20,7 +20,6 @@ surveyForm.addEventListener('submit', function(event) {
             case 'system':
                 suggestedLanguage = 'C++';
                 break;
-            // Add more cases here for different questions
         }
 
         languageSuggestion.textContent = suggestedLanguage;
