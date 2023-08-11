@@ -2,27 +2,30 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Language Suggester</title>
 </head>
 <body>
-    <h2> Language Suggester</h2>
-       <form id="survey-form">
-      <label for="q1">Question 1: What type of applications do you want to develop?</label>
-      <select id="q1" name="q1">
-        <option value="web">Web Applications</option>
-        <option value="mobile">Mobile Applications</option>
-        <option value="system">System Software</option>
-      </select>
-      <!-- Add more questions here -->
-      <button type="submit">Submit</button>
-    </form>
-    <div id="result" class="hidden">
-      <h2>Your Suggested Programming Language:</h2>
-      <p id="language-suggestion"></p>
+    <div class="container">
+      <h1>Programming Language Suggester</h1>
+      <form id="survey-form">
+        <label for="q1">Question 1: What type of projects are you interested in?</label>
+        <select id="q1" name="q1">
+          <option value="web">Web Development</option>
+          <option value="app">Mobile App Development</option>
+          <option value="sys">System Programming</option>
+        </select>
+        <label for="q2">Question 2: What's your favorite animal?</label>
+        <input type="text" id="q2" name="q2">
+        <!-- Add more questions here -->
+        <button type="submit">Submit</button>
+      </form>
+      <div id="result" class="hidden">
+        <h2>Your Suggested Programming Language:</h2>
+        <p id="language-suggestion"></p>
+      </div>
     </div>
-  </div>
-</body>
-</html>
+    <script src="script.js"></script>
+  </body>
+  </html>
