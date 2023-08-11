@@ -8,33 +8,18 @@
 </head>
 <body>
     <div class="container">
-      <h1>Programming Language Suggester</h1>
-      <form id="survey-form">
-        <label for="q1">Question 1: What type of projects are you interested in?</label>
-        <select id="q1" name="q1">
-          <option value="web">Web Development</option>
-          <option value="app">Mobile App Development</option>
-          <option value="sys">System Programming</option>
-        </select>
-        <label for="q2">Question 2: What's your favorite animal?</label>
-        <input type="text" id="q2" name="q2">
-        <label for="q3">Question 3: What's your favorite color?</label>
-        <div>
-          <label><input type="radio" name="q3" value="red"> Red</label>
-          <label><input type="radio" name="q3" value="blue"> Blue</label>
-          <label><input type="radio" name="q3" value="green"> Green</label>
+        <h1>Programming Language Suggester</h1>
+        <form id="surveyForm">
+            <p>What type of applications do you want to build?</p>
+            <input type="radio" name="applicationType" value="web"> Web Applications
+            <input type="radio" name="applicationType" value="mobile"> Mobile Applications
+            <input type="radio" name="applicationType" value="system"> System Applications
+            <!-- Add more questions here -->
+            <button type="submit">Submit</button>
+        </form>
+        <div id="result" class="hidden">
+            <p>Your suggested programming language is <span id="languageSuggestion"></span></p>
         </div>
-        <label for="q4">Question 4: What's your preferred development environment?</label>
-<div>
-  <label><input type="radio" name="q4" value="ide"> Integrated Development Environment (IDE)</label>
-  <label><input type="radio" name="q4" value="text-editor"> Text Editor</label>
-  <label><input type="radio" name="q4" value="command-line"> Command Line</label>
-</div>
-      </form>
-      <div id="result" class="hidden">
-        <h2>Your Suggested Programming Language:</h2>
-        <p id="language-suggestion"></p>
-      </div>
     </div>
     <script src="script.js"></script>
   </body>
