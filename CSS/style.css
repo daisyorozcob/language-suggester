@@ -1,9 +1,16 @@
 body {
     background-color: pink;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
   }
+
+
+  h1 {
+    color: rgb(28, 28, 28);
+    text-align: center;
+    border-style:dashed ;
+    background-color: beige;
+  }
+
   #result {
     margin-top: 20px;
     text-align: center;
