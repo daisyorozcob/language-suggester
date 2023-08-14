@@ -1,62 +1,34 @@
-const surveyForm = document.getElementById('surveyForm');
-const resultDiv = document.getElementById('result');
-const languageSuggestion = document.getElementById('languageSuggestion');
+const form = document.getElementById("survey-form");
+const submitButton = document.getElementById("submit-button");
+const resultContainer = document.getElementById("result");
+const suggestion = document.getElementById("language-suggestion");
 
-surveyForm.addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    const selectedApplicationOption = document.querySelector('input[name="applicationType"]:checked');
-    const selectedExperienceOption = document.querySelector('input[name="experienceLevel"]:checked');
-    const selectedActivityOption = document.querySelector('input[name="favoriteActivity"]:checked');
-    
-    if (selectedApplicationOption && selectedExperienceOption && selectedActivityOption) {
-        const applicationType = selectedApplicationOption.value;
-        const experienceLevel = selectedExperienceOption.value;
-        const favoriteActivity = selectedActivityOption.value;
-        let suggestedLanguage = '';
+submitButton.addEventListener("click", () => {
+  const answer1 = document.getElementById("question1").value;
+  const answer2 = document.getElementById("question2").value;
+  const answer3 = document.getElementById("question3").value;
+  const answer4 = document.getElementById("question4").value;
+  const answer5 = document.getElementById("question5").value;
 
-        // Update the switch cases based on the new question
-        switch (applicationType) {
-            case 'web':
-                suggestedLanguage = 'JavaScript';
-                break;
-            case 'mobile':
-                suggestedLanguage = 'Swift';
-                break;
-            case 'system':
-                suggestedLanguage = 'C++';
-                break;
-        }
 
-        // Additional suggestions based on experience level and favorite activity
-        switch (experienceLevel) {
-            case 'beginner':
-                suggestedLanguage = 'Python';
-                break;
-            case 'intermediate':
-                suggestedLanguage = 'Java';
-                break;
-            case 'advanced':
-                suggestedLanguage = 'Go';
-                break;
-        }
+  let suggestedLanguage = "";
 
-        // Further refine suggestions based on favorite activity
-        switch (favoriteActivity) {
-            case 'gaming':
-                suggestedLanguage = 'C#';
-                break;
-            case 'problemSolving':
-                suggestedLanguage = 'Rust';
-                break;
-            case 'creativity':
-                suggestedLanguage = 'Ruby';
-                break;
-        }
+  if (answer1 === "pancakes" || answer1 === "waffles") {
+    suggestedLanguage = "Python";
+  } else if (answer2 === "no") {
+    suggestedLanguage = "JavaScript";
+  } else if (answer3 === "no") {
+    suggestedLanguage = "Ruby";
+  } else if (answer4 === "dark") {
+    suggestedLanguage = "C#";
+  } else if (answer5 === "cats") {
+    suggestedLanguage = "Swift";
+  } else {
+    suggestedLanguage = "Java";
+  }
 
-        languageSuggestion.textContent = suggestedLanguage;
-        resultDiv.classList.remove('hidden');
-    }
+  suggestion.textContent = suggestedLanguage;
+  resultContainer.classList.remove("hidden");
+
+  form.reset();
 });
-
-

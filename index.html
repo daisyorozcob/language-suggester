@@ -1,29 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="styles.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Language Suggester</title>
-</head>
-<body>
-    <div class="container">
-        <h1>Programming Language Suggester</h1>
-        <form id="surveyForm">
-            <p>What's your programming experience level?</p>
-<input type="radio" name="experienceLevel" value="beginner"> Beginner
-<input type="radio" name="experienceLevel" value="intermediate"> Intermediate
-<input type="radio" name="experienceLevel" value="advanced"> Advanced
-<p>Which of these activities do you enjoy the most?</p>
-<input type="radio" name="favoriteActivity" value="gaming"> Gaming
-<input type="radio" name="favoriteActivity" value="problemSolving"> Problem Solving
-<input type="radio" name="favoriteActivity" value="creativity"> Creativity
-            <button type="submit">Submit</button>
-        </form>
-        <div id="result" class="hidden">
-            <p>Your suggested programming language is <span id="languageSuggestion"></span></p>
-        </div>
-    </div>
-    <script src="script.js"></script>
-  </body>
-  </html>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="CSS/style.css" type="text/css">
+      <title>Programming Language Suggester</title>
+   </head>
+   <body>
+      <div class="container">
+         <h1>Programming Language Suggester</h1>
+         <form id="survey-form">
+            <label for="question1">Question 1: Pancakes or Waffles?</label>
+            <select id="question1">
+               <option value="pancakes">Pancakes</option>
+               <option value="waffles">Waffles</option>
+            </select>
+            <label for="question2">Question 2: Is a hotdog a sandwich?</label>
+            <select id="question2">
+               <option value="yes">Yes</option>
+               <option value="no">No</option>
+            </select>
+            <label for="question3">Question 3: Pineapple on pizza?</label>
+            <select id="question3">
+               <option value="yes">Yes</option>
+               <option value="no">No</option>
+            </select>
+            <label for="question4">Question 4: Favorite Kind of Chocolate?</label>
+            <select id="question4">
+               <option value="dark">Dark Chocolate</option>
+               <option value="milk">Milk Chocolate</option>
+               <option value="ew">Ew Chocolate</option>
+            </select>
+            <label for="question5">Question 5: What pet do you prefer?</label>
+            <select id="question5">
+               <option value="dogs">Dogs</option>
+               <option value="cats">Cats</option>
+               <option value="none">No Pets</option>
+            </select>
+            <button type="button" id="submit-button">Submit</button>
+         </form>
+         <div id="result" class="hidden">
+            <h2>YOU SHOULD LEARN:</h2>
+            <p id="language-suggestion"></p>
+         </div>
+      </div>
+      <script src="JS/scripts.js"></script>
+   </body>
+</html>
+
