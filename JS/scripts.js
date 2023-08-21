@@ -13,7 +13,7 @@ submitButton.addEventListener("click", () => {
 
   let suggestedLanguage = "";
 
-  if (answer1 === "pancakes" || answer1 === "waffles") {
+  if (answer1 === "pancakes") {
     suggestedLanguage = "Python";
   } else if (answer2 === "no") {
     suggestedLanguage = "JavaScript";
